@@ -33,12 +33,12 @@ class Pokemon
     pokemon_array[0]
   end
 
-  # def alter_hp(hp, db) #tests got in way of setting default hp
-  #   sql = <<-SQL
-  #     UPDATE pokemon
-  #     SET hp = ?
-  #     WHERE id = ?
-  #   SQL
-  #   db.prepare(sql).execute(hp, self.id)
-  # end
+  def alter_hp(hp, db)
+    sql = <<-SQL
+      UPDATE pokemon
+      SET hp = ?
+      WHERE id = ?
+    SQL
+    db.prepare(sql).execute(hp, self.id)
+  end
 end
